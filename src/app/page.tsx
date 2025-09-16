@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HeroSlider from "@/components/HeroSlider";
-import Container from "@/components/Container";
 import PillarCards from "@/components/PillarCards";
 import TopHeader from "@/components/TopHeader";
 
