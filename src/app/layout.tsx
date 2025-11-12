@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display, Manrope } from "next/font/google";
+import type { ReactNode } from "react";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -48,7 +49,11 @@ export const exo2 = Exo_2({
   display: "swap",
 });
 
-export default function RootLayout({ children }) {
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt" className={`${rajdhani.variable} ${exo2.variable}`}>
       <body>{children}</body>
