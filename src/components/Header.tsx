@@ -88,7 +88,7 @@ export default function Header() {
           {/* CTA (desktop) */}
           <Link
             href="/contactos"
-            className="hidden md:inline-flex rounded-md bg-gold text-black px-4 py-2 text-sm font-semibold gold-ring"
+            className="hidden md:inline-flex rounded-md btn-gold text-black px-4 py-2 text-sm font-semibold gold-ring"
           >
             Fale Conosco
           </Link>
@@ -167,7 +167,7 @@ export default function Header() {
             <Link
               href="/contactos"
               onClick={() => setOpen(false)}
-              className="rounded-2xl bg-gold text-black px-3 py-3 text-sm font-semibold gold-ring text-center"
+              className="rounded-2xl btn-gold text-black px-3 py-3 text-sm font-semibold gold-ring text-center"
             >
              FALE CONOSCO
             </Link>
