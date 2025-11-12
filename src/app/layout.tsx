@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Playfair_Display, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "600", "700", "800"],
-  display: "swap",
-});
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "IDS — Imperio Dourado Soluções",

@@ -2,6 +2,7 @@
 
 import { Fragment } from "react";
 import clsx from "clsx";
+import type { CSSProperties } from "react";
 
 const ITEMS = [
   "Formação & Capital Humano",
@@ -12,6 +13,9 @@ const ITEMS = [
   "Qualidade & Segurança",
 ];
 
+// tipo para permitir a CSS var --speed
+type MarqueeStyle = CSSProperties & { ["--speed"]?: string };
+
 export default function MarqueeBar({
   className,
   speed = 28, // segundos por ciclo
@@ -19,20 +23,21 @@ export default function MarqueeBar({
   className?: string;
   speed?: number;
 }) {
-  // duplicamos o conteúdo para loop contínuo
   const track = [...ITEMS, ...ITEMS];
+
+  // estilo compartilhado, sem any
+  const trackStyle: MarqueeStyle = { ["--speed"]: `${speed}s` };
 
   return (
     <section
       aria-label="Capacidades IDS"
       className={clsx(
         "relative w-full select-none",
-        "bg-brand-gold text-black", // barra dourada + texto preto
+        "bg-brand-gold text-black",
         "border-y border-black/10 shadow-[inset_0_1px_0_rgba(0,0,0,.08)]",
         className
       )}
     >
-      {/* máscara nas bordas para um fade suave */}
       <div className="relative overflow-hidden">
         <div
           className="pointer-events-none absolute inset-y-0 left-0 w-16 z-10"
@@ -43,16 +48,10 @@ export default function MarqueeBar({
           style={{ maskImage: "linear-gradient(to left, black, transparent)" }}
         />
 
-        {/* faixa (2 tracks iguais para o loop) */}
         <div className="relative flex">
           <ul
             className="marquee-track whitespace-nowrap flex items-center gap-10 py-10 font-semibold tracking-wide"
-            style={
-              {
-                // velocidade controlada por CSS variable
-                ["--speed" as any]: `${speed}s`,
-              } as React.CSSProperties
-            }
+            style={trackStyle}
           >
             {track.map((item, i) => (
               <Fragment key={i}>
@@ -63,15 +62,11 @@ export default function MarqueeBar({
             ))}
           </ul>
 
-          {/* segunda faixa para preencher o espaço e evitar “salto” */}
+          {/* segunda faixa para o loop contínuo */}
           <ul
             aria-hidden="true"
             className="marquee-track whitespace-nowrap flex items-center gap-10 py-3 font-semibold tracking-wide"
-            style={
-              {
-                ["--speed" as any]: `${speed}s`,
-              } as React.CSSProperties
-            }
+            style={trackStyle}
           >
             {track.map((item, i) => (
               <Fragment key={`ghost-${i}`}>
@@ -84,7 +79,6 @@ export default function MarqueeBar({
         </div>
       </div>
 
-      {/* estilos da animação */}
       <style jsx>{`
         @keyframes marquee {
           0% {
@@ -98,7 +92,6 @@ export default function MarqueeBar({
           animation: marquee var(--speed) linear infinite;
           will-change: transform;
         }
-        /* respeita prefers-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
           .marquee-track {
             animation: none;
