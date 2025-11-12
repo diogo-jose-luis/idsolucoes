@@ -33,9 +33,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+import { Rajdhani, Exo_2 } from "next/font/google";
+
+export const rajdhani = Rajdhani({
+  subsets: ["latin"],
+  weight: ["500","600","700"],
+  variable: "--font-rajdhani",
+  display: "swap",
+});
+export const exo2 = Exo_2({
+  subsets: ["latin"],
+  weight: ["400","500","600"],
+  variable: "--font-exo2",
+  display: "swap",
+});
+
+export default function RootLayout({ children }) {
   return (
-    <html lang="pt-PT" className={`${playfair.variable} ${manrope.variable}`}>
+    <html lang="pt" className={`${rajdhani.variable} ${exo2.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -14,8 +14,8 @@ export default function Logo({ size = 32 }: { size?: number }) {
       />
 
       {/* Texto maior e branco */}
-      <span className="font-heading text-6xl text-white leading-none">
-        IDS
+      <span className="font-heading text-5xl text-white leading-none">
+        DS
       </span>
     </Link>
   );

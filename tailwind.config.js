@@ -20,8 +20,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        heading: ["var(--font-playfair)"],
-        sans: ["var(--font-manrope)"],
+        heading: ["var(--font-rajdhani)"], // títulos
+        sans: ["var(--font-exo2)"], // textos gerais
       },
       boxShadow: {
         gold: "0 0 0 1px #D4AF37, 0 10px 20px rgba(212,175,55,0.15)",
@@ -32,6 +32,11 @@ module.exports = {
       },
       borderRadius: { xl: "1rem", "2xl": "1.25rem" },
       maxWidth: { container: "1200px" },
+      boxShadow: {
+        gold: "0 0 0 1px #D4AF37, 0 10px 20px rgba(212,175,55,0.15)",
+        "gold-strong": "0 0 0 1px #D4AF37, 0 0 30px rgba(212,175,55,0.25)",
+      },
+      backdropBlur: { xs: "2px" },
     },
   },
   plugins: [],

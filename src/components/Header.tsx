@@ -8,13 +8,13 @@ import { ShoppingCart, FileUser, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { href: "/", label: "Início" },
-  { href: "/sobre", label: "Sobre" },
-  { href: "/servicos", label: "Serviços" },
-  { href: "/projectos", label: "Formações" },
-  { href: "/projectos", label: "Combustiveis" },
-  { href: "/projectos", label: "Projectos" },
-  { href: "/contactos", label: "Contactos" },
+  { href: "/", label: "INÍCIO" },
+  { href: "/sobre", label: "SOBRE" },
+  { href: "/servicos", label: "SERVIÇOS" },
+  { href: "/projectos", label: "FORMAÇÕES" },
+  { href: "/projectos", label: "COMBUSTIVEIS" },
+  { href: "/projectos", label: "PROJECTOS" },
+  { href: "/contactos", label: "CONTACTOS" },
 ];
 
 export default function Header() {
@@ -67,7 +67,7 @@ export default function Header() {
           {/* Candidatura (desktop) */}
           <Link
             href="/candidaturas"
-            className="hidden md:inline-flex items-center gap-2 rounded-2xl px-3 py-2 text-sm font-medium text-white/90 hover:text-white border border-white/10 hover:border-white/20 transition-colors"
+            className="hidden md:inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:text-white border border-white/10 hover:border-white/20 transition-colors"
             aria-label="Candidatura Espontânea"
             title="Candidatura Espontânea"
           >
@@ -88,14 +88,14 @@ export default function Header() {
           {/* CTA (desktop) */}
           <Link
             href="/contactos"
-            className="hidden md:inline-flex rounded-2xl bg-brand-gold text-black px-4 py-2 text-sm font-semibold gold-ring"
+            className="hidden md:inline-flex rounded-md bg-brand-gold text-black px-4 py-2 text-sm font-semibold gold-ring"
           >
             Fale Conosco
           </Link>
 
           {/* HAMBURGUER (mobile) */}
           <button
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 hover:border-white/20"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 hover:border-white/20"
             aria-label="Abrir menu"
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -162,14 +162,14 @@ export default function Header() {
               className="inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-3 text-sm font-medium border border-white/10 hover:border-white/20"
             >
               <FileUser className="h-5 w-5" />
-              Candidatura
+              CANDIDATURA
             </Link>
             <Link
               href="/contactos"
               onClick={() => setOpen(false)}
               className="rounded-2xl bg-brand-gold text-black px-3 py-3 text-sm font-semibold gold-ring text-center"
             >
-              Fale Conosco
+             FALE CONOSCO
             </Link>
           </div>
         </nav>
