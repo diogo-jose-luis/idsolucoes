@@ -30,10 +30,9 @@ export default function MarqueeBar({
 
   return (
     <section
-      aria-label="Capacidades IDS"
       className={clsx(
         "relative w-full select-none",
-        "bg-brand-gold text-black",
+        "bg-gold text-black", // ← antes era bg-brand-gold
         "border-y border-black/10 shadow-[inset_0_1px_0_rgba(0,0,0,.08)]",
         className
       )}

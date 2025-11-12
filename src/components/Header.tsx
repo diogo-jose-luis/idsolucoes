@@ -29,7 +29,7 @@ export default function Header() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key == "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -54,7 +54,7 @@ export default function Header() {
               href={item.href}
               className={clsx(
                 "text-sm font-medium text-white/80 hover:text-white transition-colors",
-                pathname === item.href && "gold-text"
+                pathname == item.href && "gold-text"
               )}
             >
               {item.label}
@@ -88,7 +88,7 @@ export default function Header() {
           {/* CTA (desktop) */}
           <Link
             href="/contactos"
-            className="hidden md:inline-flex rounded-md bg-brand-gold text-black px-4 py-2 text-sm font-semibold gold-ring"
+            className="hidden md:inline-flex rounded-md bg-gold text-black px-4 py-2 text-sm font-semibold gold-ring"
           >
             Fale Conosco
           </Link>
@@ -148,7 +148,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className={clsx(
                 "rounded-xl px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5",
-                pathname === item.href && "gold-text"
+                pathname == item.href && "gold-text"
               )}
             >
               {item.label}
@@ -167,7 +167,7 @@ export default function Header() {
             <Link
               href="/contactos"
               onClick={() => setOpen(false)}
-              className="rounded-2xl bg-brand-gold text-black px-3 py-3 text-sm font-semibold gold-ring text-center"
+              className="rounded-2xl bg-gold text-black px-3 py-3 text-sm font-semibold gold-ring text-center"
             >
              FALE CONOSCO
             </Link>

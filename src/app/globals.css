@@ -14,6 +14,17 @@
   body {
     @apply bg-brand-black text-white antialiased;
   }
+
+  @layer base {
+  body {
+    @apply bg-brand-black text-white antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
 }
 
 /* Components: classes nominais que combinam utilitários */
@@ -28,26 +39,65 @@
   .gold-ring {
     box-shadow: 0 0 0 1px #d4af37, 0 10px 20px rgba(212, 175, 55, 0.15);
   }
+ 
 
-  .btn-gold {
-    @apply inline-flex items-center gap-2 rounded-2xl bg-brand-gold text-black font-semibold px-5 py-3 gold-ring transition-transform active:scale-[0.99];
-  }
-  .btn-outline {
-    @apply inline-flex items-center gap-2 rounded-2xl border border-white/15 text-white/90 hover:text-white hover:border-white/30 px-5 py-3;
+  /* Superfície dourada (gradiente metálico) */
+  .bg-gold {
+    background-image:
+      linear-gradient(135deg, #d4af37 0%, #f1d27a 45%, #b68c2c 100%);
+    color: #121212; /* contraste adequado */
   }
 
+ 
+
+  /* Variante mais premium p/ banners e blocos grandes */
+  .bg-gold-premium {
+    background-image:
+      linear-gradient(160deg, #b68c2c 0%, #d4af37 32%, #f1d27a 58%, #b68c2c 100%);
+    box-shadow: 0 0 0 1px #d4af37, 0 20px 40px rgba(212,175,55,0.18);
+    color: #0c0c0c;
+  }
+
+  /* Anel/sombra dourados coerentes */
+  .gold-ring { box-shadow: 0 0 0 1px #d4af37, 0 10px 20px rgba(212,175,55,0.15); }
+  .gold-ring-strong { box-shadow: 0 0 0 1px #d4af37, 0 0 30px rgba(212,175,55,0.25); }
+
+  /* Botões */
   .btn-gold {
-    @apply inline-flex items-center gap-2 rounded-md  /* era rounded-2xl */
-           bg-brand-gold text-black font-semibold px-5 py-3
-           shadow-[0_0_0_1px_#D4AF37,0_10px_20px_rgba(212,175,55,.15)]
-           transition-transform active:scale-[0.99];
-    letter-spacing: 0.2px;
+    @apply inline-flex items-center gap-2 rounded-md px-5 py-3 font-semibold transition-transform active:scale-[0.99];
+    background-image: linear-gradient(135deg, #d4af37 0%, #f1d27a 45%, #b68c2c 100%);
+    color: #121212;
+    box-shadow: 0 0 0 1px #d4af37, 0 10px 20px rgba(212,175,55,.15);
+    letter-spacing: .2px;
+    position: relative;
+    overflow: hidden;
   }
-  .btn-outline {
-    @apply inline-flex items-center gap-2 rounded-md /* era rounded-2xl */
-           border border-white/15 text-white/90 hover:text-white
-           hover:border-white/30 px-5 py-3;
-    letter-spacing: 0.2px;
+  .btn-gold:hover { box-shadow: 0 0 0 1px #f1d27a, 0 12px 24px rgba(241,210,122,.18); }
+
+  /* leve “sheen” no hover (opcional) */
+  .btn-gold::after{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.25) 40%, transparent 60%);
+    transform: translateX(-120%);
+    transition: transform .6s ease;
   }
+  .btn-gold:hover::after{ transform: translateX(120%); }
+
+  .btn-gold-outline {
+    @apply inline-flex items-center gap-2 rounded-md px-5 py-3 font-semibold border border-yellow-400 text-yellow-300 hover:text-white transition-colors;
+    background-color: transparent;
+    box-shadow: 0 0 0 1px #d4af37;
+    border: 1px solid #d4af37;
+  }
+
+  /* Badges/mini chips dourados */
+  .badge-gold {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+    background-image: linear-gradient(135deg, #d4af37 0%, #f1d27a 50%, #b68c2c 100%);
+    color: #111;
+    box-shadow: 0 0 0 1px #d4af37;
+  }
+
   
 }

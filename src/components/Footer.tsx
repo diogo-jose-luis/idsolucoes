@@ -41,7 +41,7 @@ export default function Footer() {
               <Link href="/" className="inline-flex items-center gap-3">
                 {/* Se tiveres o componente <Logo />, usa-o aqui */}
                 <Image
-                  src="/logoIDScomTexto.png" // substitui pelo teu asset
+                  src="/logoIDStower.png" // substitui pelo teu asset
                   alt="IDS — Império Dourado Soluções"
                   width={36}
                   height={36}

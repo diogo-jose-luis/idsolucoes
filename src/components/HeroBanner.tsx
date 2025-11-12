@@ -12,7 +12,7 @@ export default function HeroBanner() {
 
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/hero/slide4.png"
+          src="/hero/bg-dourado-xl.png"
           alt=""
           fill
           priority
@@ -20,7 +20,7 @@ export default function HeroBanner() {
           style={{ objectPosition: "80% center" }}
         />
         {/* camada escura sobre a imagem */}
-        <div className="absolute inset-0 bg-black/20" />{" "}
+        <div className="absolute inset-0 bg-black/60" />{" "}
         {/* ← opacidade ajustável */}
         {/* véu dourado opcional (mantém teu degradê existente) */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/70" />
@@ -38,7 +38,7 @@ export default function HeroBanner() {
               className="mt-2 font-heading font-bold uppercase
                            text-4xl sm:text-5xl md:text-6xl leading-[1.05]"
             >
-              Somos a Melhor Equipa de
+              A Melhor Equipa de
               <span className="block gold-text">
                 Soluções para o seu Negócio
               </span>
@@ -53,7 +53,7 @@ export default function HeroBanner() {
               <Link href="/contactos" className="btn-gold">
                 Fale com a IDS
               </Link>
-              <Link href="/sobre#video" className="btn-outline">
+              <Link href="/sobre#video" className="btn-gold-outline">
                 <Play className="h-5 w-5" />
                 Ver vídeo
               </Link>
