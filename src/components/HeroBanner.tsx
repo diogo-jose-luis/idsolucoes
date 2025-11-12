@@ -12,7 +12,7 @@ export default function HeroBanner() {
 
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/hero/bg-dourado-xl.png"
+          src="/hero/slide4.png"
           alt=""
           fill
           priority
