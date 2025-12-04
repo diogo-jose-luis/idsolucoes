@@ -69,13 +69,13 @@ export default function LatestProjects() {
                 key={p.title}
                 className={[
                   "group rounded-3xl overflow-hidden border border-white/10 bg-[#0C0D10]/90",
-                  i === 1 ? "md:row-span-2" : "", // destaca o cartão do meio
+                  i == 1 ? "md:row-span-2" : "", // destaca o cartão do meio
                 ].join(" ")}
               >
                 <div
                   className={[
                     "relative",
-                    i === 1 ? "aspect-[16/11] md:aspect-[3/4]" : "aspect-[16/11]",
+                    i == 1 ? "aspect-[16/11] md:aspect-[3/4]" : "aspect-[16/11]",
                   ].join(" ")}
                 >
                   <Image

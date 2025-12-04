@@ -20,7 +20,7 @@ export default function HeroBanner() {
           style={{ objectPosition: "80% center" }}
         />
         {/* camada escura sobre a imagem */}
-        <div className="absolute inset-0 bg-black/60" />{" "}
+        <div className="absolute inset-0 bg-black/30" />{" "}
         {/* ← opacidade ajustável */}
         {/* véu dourado opcional (mantém teu degradê existente) */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/70" />

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Logo({ size = 32 }: { size?: number }) {
+export default function Logo({ size = 128 }: { size?: number }) {
   return (
     <Link href="/" className="inline-flex items-center gap-1">
       {/* Logo menorzinho */}
       <Image
-        src="/logoIDStower.png"
+        src="/logoIDStowerAndText.png"
         alt="IDS — Imperio Dourado Soluções"
         width={size}
         height={size}
@@ -14,9 +14,9 @@ export default function Logo({ size = 32 }: { size?: number }) {
       />
 
       {/* Texto maior e branco */}
-      <span className="font-heading text-5xl text-white leading-none">
+      {/* <span className="font-heading text-5xl text-white leading-none">
         DS
-      </span>
+      </span> */}
     </Link>
   );
 }

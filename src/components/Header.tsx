@@ -11,8 +11,8 @@ const NAV = [
   { href: "/", label: "INÍCIO" },
   { href: "/sobre", label: "SOBRE" },
   { href: "/servicos", label: "SERVIÇOS" },
-  { href: "/projectos", label: "FORMAÇÕES" },
-  { href: "/projectos", label: "COMBUSTIVEIS" },
+  { href: "/formacoes", label: "FORMAÇÕES" },
+  { href: "/combustiveis", label: "COMBUSTÍVEIS" }, // ← agora aponta certo
   { href: "/projectos", label: "PROJECTOS" },
   { href: "/contactos", label: "CONTACTOS" },
 ];
@@ -77,7 +77,7 @@ export default function Header() {
 
           {/* Carrinho (sempre visível) */}
           <Link
-            href="/carrinho"
+            href="/"
             className="inline-flex items-center justify-center rounded-2xl h-10 w-10 border border-white/10 hover:border-white/20 transition-colors relative"
             aria-label="Carrinho"
             title="Carrinho"
@@ -169,7 +169,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="rounded-2xl btn-gold text-black px-3 py-3 text-sm font-semibold gold-ring text-center"
             >
-             FALE CONOSCO
+              FALE CONOSCO
             </Link>
           </div>
         </nav>

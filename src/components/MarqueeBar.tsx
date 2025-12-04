@@ -4,13 +4,16 @@ import { Fragment } from "react";
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 
+// agora focado em Segurança de Património / Segurança Electrónica
 const ITEMS = [
-  "Formação & Capital Humano",
-  "Serviços Técnicos & Industriais",
-  "Combustíveis & Logística",
-  "Automação de Processos",
-  "Consultoria & Projetos",
-  "Qualidade & Segurança",
+  "CFTV — câmaras de vídeo vigilância",
+  "Sistemas de intrusão",
+  "Sistemas de incêndio e detecção",
+  "Biometria",
+  "Controlo de acesso e assiduidade",
+  "Cerca eléctrica",
+  "Cancelas e barreiras",
+  "Catracas e portões automáticos",
 ];
 
 // tipo para permitir a CSS var --speed
@@ -32,7 +35,7 @@ export default function MarqueeBar({
     <section
       className={clsx(
         "relative w-full select-none",
-        "bg-gold text-black", // ← antes era bg-brand-gold
+        "bg-gold text-black",
         "border-y border-black/10 shadow-[inset_0_1px_0_rgba(0,0,0,.08)]",
         className
       )}
@@ -49,7 +52,7 @@ export default function MarqueeBar({
 
         <div className="relative flex">
           <ul
-            className="marquee-track whitespace-nowrap flex items-center gap-10 py-10 font-semibold tracking-wide"
+            className="marquee-track whitespace-nowrap flex items-center gap-10 py-3 md:py-4 font-semibold tracking-wide"
             style={trackStyle}
           >
             {track.map((item, i) => (
@@ -64,7 +67,7 @@ export default function MarqueeBar({
           {/* segunda faixa para o loop contínuo */}
           <ul
             aria-hidden="true"
-            className="marquee-track whitespace-nowrap flex items-center gap-10 py-3 font-semibold tracking-wide"
+            className="marquee-track whitespace-nowrap flex items-center gap-10 py-3 md:py-4 font-semibold tracking-wide"
             style={trackStyle}
           >
             {track.map((item, i) => (

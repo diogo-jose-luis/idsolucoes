@@ -1,30 +1,93 @@
 // src/components/HeroStats.tsx
 "use client";
+
+import { useEffect, useRef, useState } from "react";
+import clsx from "clsx";
 import Container from "./Container";
 
-const STATS = [
-  { value: "34",  label: "Years Experience" },
-  { value: "99",  label: "Customer Satisfaction" },
-  { value: "184", label: "Team Members" },
-  { value: "541", label: "Project Complete" },
+type Stat = {
+  value: number;
+  label: string;
+};
+
+const STATS: Stat[] = [
+  { value: 34, label: "Years Experience" },
+  { value: 99, label: "Customer Satisfaction" },
+  { value: 184, label: "Team Members" },
+  { value: 541, label: "Project Complete" },
 ];
 
-export default function HeroStats() {
+type HeroStatsProps = {
+  /** se true, usa margin negativa para “grudar” no Hero (home) */
+  overlap?: boolean;
+  className?: string;
+};
+
+export default function HeroStats({ overlap = true, className }: HeroStatsProps) {
+  const [progress, setProgress] = useState(0); // 0 → 1
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let frameId: number;
+    const duration = 1300; // ms
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+
+        observer.disconnect(); // anima só uma vez
+
+        const start = performance.now();
+        const tick = (now: number) => {
+          const p = Math.min(1, (now - start) / duration);
+          setProgress(p);
+          if (p < 1) {
+            frameId = requestAnimationFrame(tick);
+          }
+        };
+        frameId = requestAnimationFrame(tick);
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      if (frameId) cancelAnimationFrame(frameId);
+    };
+  }, []);
+
   return (
-    <div className="-mt-16 md:-mt-24 relative">
+    <div
+      ref={ref}
+      className={clsx(
+        "relative",
+        overlap ? "-mt-16 md:-mt-24" : "mt-0",
+        className
+      )}
+    >
       <Container>
         <div className="rounded-md bg-[#0E0F12]/95 border border-white/10 shadow-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
-            {STATS.map((s) => (
-              <div key={s.label} className="px-6 py-8 text-center">
-                <div className="font-heading font-bold text-4xl md:text-5xl tracking-tight">
-                  <span className="gold-text">{s.value}</span>
+            {STATS.map((s) => {
+              const current = Math.round(s.value * progress);
+              return (
+                <div key={s.label} className="px-6 py-8 text-center">
+                  <div className="font-heading font-bold text-4xl md:text-5xl tracking-tight">
+                    <span className="gold-text">
+                      {current.toLocaleString("en-US")}
+                    </span>
+                  </div>
+                  <div className="mt-2 text-[13px] md:text-sm text-white/70 uppercase tracking-wide">
+                    {s.label}
+                  </div>
                 </div>
-                <div className="mt-2 text-[13px] md:text-sm text-white/70 uppercase tracking-wide">
-                  {s.label}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </Container>
