@@ -1,7 +1,11 @@
 // src/components/PageBanner.tsx
+"use client";
 import Container from "./Container";
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion } from "framer-motion";
+import { fadeUp, fadeUpDelayed } from "@/lib/motion";
 
 type PageBannerProps = {
   title: string;
@@ -55,14 +59,24 @@ export default function PageBanner({
 
             {/* título + subtítulo */}
             <div>
-              <h1 className="font-bold font-heading text-3xl md:text-4xl lg:text-5xl block gold-text drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
+              <motion.h1
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                className="font-bold font-heading text-3xl md:text-4xl lg:text-5xl block gold-text drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]"
+              >
                 {title}
-              </h1>
+              </motion.h1>
 
               {subtitle && (
-                <p className="mt-2 text-sm md:text-base text-brand-ink/75 max-w-2xl leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.18)]">
+                <motion.p
+                  variants={fadeUpDelayed(0.15)}
+                  initial="hidden"
+                  animate="visible"
+                  className="mt-2 text-sm md:text-base text-brand-ink/75 max-w-2xl leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.18)]"
+                >
                   {subtitle}
-                </p>
+                </motion.p>
               )}
             </div>
           </div>

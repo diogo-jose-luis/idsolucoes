@@ -6,6 +6,9 @@ import { Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+import { fadeUp, fadeUpDelayed } from "@/lib/motion";
+
 export default function HeroBanner() {
   return (
     <section className="relative isolate">
@@ -31,21 +34,37 @@ export default function HeroBanner() {
       {/* Altura quase cheia */}
       <div className="min-h-[92vh] md:min-h-[95vh] flex items-center">
         <Container>
-          <div className="max-w-3xl">
-            <p className="font-sans font-semibold text-brand-goldDark tracking-wide">
-              IDS — Excelência & Confiabilidade
-            </p>
+          <motion.div
+  initial="hidden"
+  animate="visible"
+  transition={{ staggerChildren: 0.12 }}
+  className="max-w-3xl"
+>
 
-            <h1 className="mt-2 font-heading font-bold uppercase text-brand-ink text-4xl sm:text-5xl md:text-6xl leading-[1.05]">
+            <motion.p
+              variants={fadeUp}
+              className="font-sans font-semibold text-brand-goldDark tracking-wide"
+            >
+              IDS — Excelência & Confiabilidade
+            </motion.p>
+
+            <motion.h1
+              variants={fadeUpDelayed(0.05)}
+              className="mt-2 font-heading font-bold uppercase text-brand-ink text-4xl sm:text-5xl md:text-6xl leading-[1.05]"
+            >
               A Melhor Equipa de
               <span className="block gold-text drop-shadow-[0_2px_6px_rgba(0,0,0,0.70)]">
                 Soluções para o seu Negócio
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="mt-4 text-brand-ink/95 max-w-[60ch] leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.25)]">
-              Formação & Capital Humano, Serviços Técnicos & Industriais e Man Power.
-            </p>
+            <motion.p
+              variants={fadeUpDelayed(0.15)}
+              className="mt-4 text-brand-ink/95 max-w-[60ch] leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.25)]"
+            >
+              Formação & Capital Humano, Serviços Técnicos & Industriais e Man
+              Power.
+            </motion.p>
 
             <div className="mt-8 flex items-center gap-3">
               <Link href="/contactos" className="btn-gold">
@@ -62,7 +81,7 @@ export default function HeroBanner() {
                 Ver vídeo
               </Link>
             </div>
-          </div>
+          </motion.div>
         </Container>
       </div>
     </section>

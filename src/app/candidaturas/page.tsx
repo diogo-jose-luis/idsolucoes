@@ -17,7 +17,7 @@ export default function CandidaturasPage() {
         <PageBanner
           title="Candidatura"
           subtitle="Formulário oficial de candidatura — preencha os dados para integrar a nossa base de recrutamento."
-          image="/hero/slide4.png"
+          image="/hero/slide10.png"
         />
 
         <CandidateWizardForm />
