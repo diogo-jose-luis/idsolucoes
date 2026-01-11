@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Logo({ size = 128 }: { size?: number }) {
+export default function Logo({ size = 96 }: { size?: number }) {
   return (
     <Link href="/" className="inline-flex items-center gap-1">
       {/* Logo menorzinho */}
       <Image
-        src="/logoIDStowerAndText.png"
+        src="/logoIDScomTextoBlack.png"
         alt="IDS — Imperio Dourado Soluções"
         width={size}
         height={size}

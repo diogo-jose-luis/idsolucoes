@@ -13,6 +13,15 @@ module.exports = {
           gold: "#D4AF37",
           goldDark: "#B68C2C",
           goldLight: "#F1D27A",
+
+          // NOVO (tema claro)
+          ivory: "#F7F5EF",
+          surface: "#FFFFFF",
+          surface2: "#F1EFE7",
+          ink: "#111827",
+          muted: "#374151",
+
+          // podes manter os antigos se ainda usares em páginas específicas
           black: "#0A0A0A",
           coal: "#121212",
           white: "#FFFFFF",

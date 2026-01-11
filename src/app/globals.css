@@ -12,12 +12,7 @@
 /* Base: regras sobre elementos (ex.: body) */
 @layer base {
   body {
-    @apply bg-brand-black text-white antialiased;
-  }
-
-  @layer base {
-  body {
-    @apply bg-brand-black text-white antialiased font-sans;
+    @apply bg-brand-ivory text-brand-ink antialiased font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -25,7 +20,6 @@
   }
 }
 
-}
 
 /* Components: classes nominais que combinam utilitários */
 @layer components {

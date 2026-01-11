@@ -12,7 +12,7 @@ export default function FormacoesPage() {
         <PageBanner
           title="Formações IDS"
           subtitle="Cursos e programas de capacitação para impulsionar a tua carreira e fortalecer as equipas da tua empresa."
-          image="/hero/slide4.png"
+          image="/hero/slide8.png"
         />
 
         <FormacoesFilterSection />

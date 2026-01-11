@@ -23,7 +23,7 @@ const footerLinks = {
   services: [
     { label: "Formação & Capital Humano", href: "/servicos/formacao" },
     { label: "Serviços Técnicos & Industriais", href: "/servicos/industriais" },
-    { label: "Combustíveis & Logística", href: "/servicos/combustiveis" },
+    { label: "Man Power", href: "/servicos/manpower" },
     { label: "Automação de Processos", href: "/servicos/automacao" },
     { label: "Consultoria & Projetos", href: "/servicos/consultoria" },
     { label: "Qualidade & Segurança", href: "/servicos/qualidade-seguranca" },
@@ -33,29 +33,42 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="relative">
-      <div className="border-t-2 border-[#d6a434]/20 bg-gradient-to-b from-[#141519] to-[#0C0D10]">
+      {/* linha dourada BEM destacada */}
+      <div className="h-[3px] w-full bg-gold-premium" />
+
+      {/* Escuro elegante + “ouro reluzente” suave por trás */}
+      <div className="relative overflow-hidden bg-gradient-to-b from-[#1A1B20] via-[#121318] to-[#0E0F12]">
+        {/* brilho dourado animado (bem sutil) */}
+        <div className="pointer-events-none absolute inset-0 opacity-40">
+          {/* glow base */}
+          <div className="absolute -top-24 left-1/2 h-80 w-[900px] -translate-x-1/2 rounded-full bg-brand-gold/12 blur-3xl" />
+
+          {/* faixas “sheen” que passam lentamente */}
+          <div className="ids-gold-shimmer absolute inset-0" />
+        </div>
+
+        {/* borda superior dourada adicional (opcional, reforça) */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-px bg-brand-gold/50" />
+
         <Container>
           <div className="grid gap-10 md:grid-cols-4 py-14">
             {/* Coluna 1 - Logo + texto + sociais */}
             <div>
               <Link href="/" className="inline-flex items-center gap-3">
-                {/* Se tiveres o componente <Logo />, usa-o aqui */}
                 <Image
-                  src="/logoIDStowerAndText.png" // substitui pelo teu asset
+                  src="/logoIDStowerAndText.png"
                   alt="IDS — Império Dourado Soluções"
                   width={128}
                   height={64}
                   className="rounded"
                 />
-                {/* <span className="font-heading text-xl font-semibold gold-text">
-                  IDS
-                </span> */}
               </Link>
 
               <p className="mt-4 text-sm text-white/70 max-w-xs leading-relaxed">
                 Soluções completas para o seu negócio: formação, serviços
-                técnicos e gestão de combustíveis — com foco em qualidade,
-                segurança e resultados.
+                técnicos e{" "}
+                <span className="text-white/80 font-semibold">man power</span> —
+                com foco em qualidade, segurança e resultados.
               </p>
 
               <div className="mt-4 flex items-center gap-3">
@@ -109,14 +122,15 @@ export default function Footer() {
               <div className="mt-4 space-y-3">
                 <a
                   href="/downloads/IDS-portfolio.pdf"
-                  className="inline-flex w-full items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:border-white/20"
+                  className="inline-flex w-full items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10 hover:border-white/20 transition-colors"
                 >
                   Portfólio IDS (PDF)
                   <ArrowDownToLine className="h-4 w-4" />
                 </a>
+
                 <a
                   href="/downloads/IDS-company-profile.pdf"
-                  className="inline-flex w-full items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:border-white/20"
+                  className="inline-flex w-full items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10 hover:border-white/20 transition-colors"
                 >
                   Company Profile
                   <ArrowDownToLine className="h-4 w-4" />
@@ -136,13 +150,61 @@ export default function Footer() {
             </p>
             <nav className="flex items-center gap-5 text-xs">
               <FooterLink href="/termos">Termos de Uso</FooterLink>
-              <FooterLink href="/privacidade">
-                Política de Privacidade
-              </FooterLink>
+              <FooterLink href="/privacidade">Política de Privacidade</FooterLink>
               <FooterLink href="/cookies">Política de Cookies</FooterLink>
             </nav>
           </div>
         </Container>
+
+        {/* CSS da animação (local ao componente) */}
+        <style jsx>{`
+          .ids-gold-shimmer {
+            background-image:
+              radial-gradient(
+                900px 260px at 18% 45%,
+                rgba(212, 175, 55, 0.18),
+                transparent 60%
+              ),
+              radial-gradient(
+                700px 240px at 78% 60%,
+                rgba(241, 210, 122, 0.14),
+                transparent 62%
+              ),
+              linear-gradient(
+                120deg,
+                transparent 0%,
+                rgba(212, 175, 55, 0.12) 40%,
+                transparent 70%
+              );
+            filter: blur(0px);
+            transform: translateX(-20%);
+            animation: idsShimmer 6.5s ease-in-out infinite;
+            opacity: 0.55;
+          }
+
+          @keyframes idsShimmer {
+            0% {
+              transform: translateX(-22%) translateY(0);
+              opacity: 0.35;
+            }
+            50% {
+              transform: translateX(10%) translateY(-6px);
+              opacity: 0.55;
+            }
+            100% {
+              transform: translateX(-22%) translateY(0);
+              opacity: 0.35;
+            }
+          }
+
+          /* respeita usuários com reduce motion */
+          @media (prefers-reduced-motion: reduce) {
+            .ids-gold-shimmer {
+              animation: none;
+              opacity: 0.25;
+            }
+          }
+        `}</style>
       </div>
     </footer>
   );
@@ -156,10 +218,7 @@ function FooterLink({
   children: React.ReactNode;
 }) {
   return (
-    <Link
-      href={href}
-      className="text-white/75 hover:text-white transition-colors"
-    >
+    <Link href={href} className="text-white/75 hover:text-white transition-colors">
       {children}
     </Link>
   );

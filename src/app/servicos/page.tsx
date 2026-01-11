@@ -12,7 +12,7 @@ export default function ServicosPage() {
         <PageBanner
           title="Serviços IDS"
           subtitle="Formação certificada, segurança eletrónica e soluções técnicas para potenciar pessoas, empresas e operações."
-          image="/hero/slide4.png"
+          image="/hero/slide6.png"
         />
 
           {/* Section com filtros por categoria */}

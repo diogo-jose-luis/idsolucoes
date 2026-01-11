@@ -1,4 +1,5 @@
 "use client";
+
 import Container from "./Container";
 import Logo from "./Logo";
 import Link from "next/link";
@@ -12,8 +13,7 @@ const NAV = [
   { href: "/sobre", label: "SOBRE" },
   { href: "/servicos", label: "SERVIÇOS" },
   { href: "/formacoes", label: "FORMAÇÕES" },
-  { href: "/combustiveis", label: "COMBUSTÍVEIS" }, // ← agora aponta certo
-  { href: "/projectos", label: "PROJECTOS" },
+  { href: "/man-power", label: "MAN POWER" },
   { href: "/contactos", label: "CONTACTOS" },
 ];
 
@@ -27,21 +27,28 @@ export default function Header() {
     else document.body.classList.remove("overflow-hidden");
   }, [open]);
 
+  // fechar com ESC
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key == "Escape") setOpen(false);
+      if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // já fechas onClick nos links; se quiseres 100%, podes observar pathname:
+  // fecha quando muda rota
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-[60] backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-white/10">
+    <header
+      className={clsx(
+        "sticky top-0 z-[60]",
+        "backdrop-blur supports-[backdrop-filter]:bg-white/70",
+        "border-b border-black/10"
+      )}
+    >
       <Container className="flex h-20 items-center justify-between">
         {/* ESQUERDA */}
         <Logo />
@@ -53,8 +60,8 @@ export default function Header() {
               key={item.href + item.label}
               href={item.href}
               className={clsx(
-                "text-sm font-medium text-white/80 hover:text-white transition-colors",
-                pathname == item.href && "gold-text"
+                "text-sm font-medium text-brand-ink/80 hover:text-brand-ink transition-colors",
+                pathname === item.href && "gold-text"
               )}
             >
               {item.label}
@@ -67,7 +74,12 @@ export default function Header() {
           {/* Candidatura (desktop) */}
           <Link
             href="/candidaturas"
-            className="hidden md:inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:text-white border border-white/10 hover:border-white/20 transition-colors"
+            className={clsx(
+              "hidden md:inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium",
+              "text-brand-ink/80 hover:text-brand-ink",
+              "border border-black/10 hover:border-black/20",
+              "bg-white/40 hover:bg-white/70 transition-colors"
+            )}
             aria-label="Candidatura Espontânea"
             title="Candidatura Espontânea"
           >
@@ -75,14 +87,18 @@ export default function Header() {
             <span className="hidden lg:inline">Candidatura</span>
           </Link>
 
-          {/* Carrinho (sempre visível) */}
+          {/* Carrinho */}
           <Link
             href="/"
-            className="inline-flex items-center justify-center rounded-2xl h-10 w-10 border border-white/10 hover:border-white/20 transition-colors relative"
+            className={clsx(
+              "inline-flex items-center justify-center rounded-2xl h-10 w-10 relative",
+              "border border-black/10 hover:border-black/20",
+              "bg-white/40 hover:bg-white/70 transition-colors"
+            )}
             aria-label="Carrinho"
             title="Carrinho"
           >
-            <ShoppingCart className="h-5 w-5 text-white/90" />
+            <ShoppingCart className="h-5 w-5 text-brand-ink/80" />
           </Link>
 
           {/* CTA (desktop) */}
@@ -95,60 +111,70 @@ export default function Header() {
 
           {/* HAMBURGUER (mobile) */}
           <button
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 hover:border-white/20"
+            className={clsx(
+              "md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md",
+              "border border-black/10 hover:border-black/20",
+              "bg-white/40 hover:bg-white/70 transition-colors"
+            )}
             aria-label="Abrir menu"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen(true)}
           >
-            <Menu className="h-5 w-5 text-white/90" />
+            <Menu className="h-5 w-5 text-brand-ink/80" />
           </button>
         </div>
       </Container>
 
-      {/* OVERLAY + PAINEL MOBILE */}
-      {/* overlay */}
+      {/* OVERLAY (cobre a página toda) */}
       <div
         className={clsx(
-          "fixed top-0 right-0 z-[60] h-full w-[84%] max-w-xs bg-brand-coal border-l border-white/10 shadow-2xl ring-1 ring-white/10 md:hidden",
-          "transition-transform duration-300",
-          open ? "translate-x-0" : "translate-x-full"
+          "fixed inset-0 z-[55] md:hidden",
+          "bg-black/25 backdrop-blur-[1px]",
+          "transition-opacity duration-300",
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
         onClick={() => setOpen(false)}
       />
 
-      {/* painel */}
+      {/* PAINEL MOBILE */}
       <div
         id="mobile-nav"
         className={clsx(
-          "fixed top-0 right-0 z-[60] h-full w-[84%] max-w-xs bg-brand-coal border-l border-white/10 shadow-2xl ring-1 ring-white/10 md:hidden",
+          "fixed top-0 right-0 z-[60] h-full w-[84%] max-w-xs md:hidden",
+          "bg-brand-surface border-l border-black/10 shadow-2xl ring-1 ring-black/5",
           "transition-transform duration-300",
           open ? "translate-x-0" : "translate-x-full"
         )}
       >
         <div
-          className="flex items-center justify-between px-4 h-16 border-b border-white/10 bg-brand-coal"
+          className="flex items-center justify-between px-4 h-16 border-b border-black/10 bg-brand-surface"
           style={{ paddingTop: "env(safe-area-inset-top)" }}
         >
           <Logo size={28} />
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 hover:border-white/20"
+            className={clsx(
+              "inline-flex h-10 w-10 items-center justify-center rounded-2xl",
+              "border border-black/10 hover:border-black/20",
+              "bg-white/40 hover:bg-white/70 transition-colors"
+            )}
             aria-label="Fechar menu"
             onClick={() => setOpen(false)}
           >
-            <X className="h-5 w-5 text-white/90" />
+            <X className="h-5 w-5 text-brand-ink/80" />
           </button>
         </div>
 
-        <nav className="px-4 py-4 flex flex-col gap-1 bg-brand-coal">
+        <nav className="px-4 py-4 flex flex-col gap-1 bg-brand-surface">
           {NAV.map((item) => (
             <Link
               key={`m-${item.href}-${item.label}`}
               href={item.href}
               onClick={() => setOpen(false)}
               className={clsx(
-                "rounded-xl px-3 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/5",
-                pathname == item.href && "gold-text"
+                "rounded-xl px-3 py-3 text-base font-medium transition-colors",
+                "text-brand-ink/80 hover:text-brand-ink hover:bg-black/5",
+                pathname === item.href && "gold-text"
               )}
             >
               {item.label}
@@ -159,11 +185,17 @@ export default function Header() {
             <Link
               href="/candidaturas"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-3 text-sm font-medium border border-white/10 hover:border-white/20"
+              className={clsx(
+                "inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-3 text-sm font-medium",
+                "border border-black/10 hover:border-black/20",
+                "bg-white/40 hover:bg-white/70 transition-colors",
+                "text-brand-ink/80 hover:text-brand-ink"
+              )}
             >
               <FileUser className="h-5 w-5" />
               CANDIDATURA
             </Link>
+
             <Link
               href="/contactos"
               onClick={() => setOpen(false)}

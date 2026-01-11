@@ -1,12 +1,11 @@
-// src/app/sobre/page.tsx
+// src/app/sobre/page.tsx  (como usar)
 import AboutIntroSection from "@/components/about/AboutIntroSection";
+import MissionVisionValuesSection from "@/components/about/MissionVisionValuesSection";
 import TeamSection from "@/components/about/TeamSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroStats from "@/components/HeroStats";
 import PageBanner from "@/components/PageBanner";
-
-// src/app/sobre/page.tsx
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 export default function SobrePage() {
@@ -21,13 +20,12 @@ export default function SobrePage() {
         />
 
         <AboutIntroSection />
+        <MissionVisionValuesSection /> {/* ← nova section */}
         <TeamSection />
         <HeroStats overlap={false} className="mt-5 mb-5" />
-
-        <TestimonialsSection /> {/* ← nova section */}
+        <TestimonialsSection />
       </main>
       <Footer />
     </>
   );
 }
-

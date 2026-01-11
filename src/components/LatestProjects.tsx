@@ -17,7 +17,7 @@ const PROJECTS: Project[] = [
     cat: "Formação",
     title: "Capacitação em Segurança no Trabalho",
     href: "/projectos/formacao-seguranca",
-    img: "/hero/slide1.png",
+    img: "/hero/slide8.png",
   },
   {
     cat: "Soluções Digitais",
@@ -29,7 +29,7 @@ const PROJECTS: Project[] = [
     cat: "Operações",
     title: "Centro de Monitorização Operacional",
     href: "/projectos/monitorizacao",
-    img: "/hero/slide3.png",
+    img: "/hero/slide6.png",
   },
   {
     cat: "Indústria",
@@ -38,27 +38,29 @@ const PROJECTS: Project[] = [
     img: "/hero/slide4.png",
   },
   {
-    cat: "Combustíveis",
-    title: "Gestão de Consumo & Abastecimento",
-    href: "/projectos/combustiveis-gestao",
-    img: "/hero/bg-dourado-lg.png",
+    cat: "Man Power",
+    title: "Alocação de Equipas para Operações Críticas",
+    href: "/projectos/manpower-operacoes",
+    img: "/hero/slide5.png",
   },
 ];
 
 export default function LatestProjects() {
-  // queremos o cartão central (index 1) um pouco mais alto para lembrar o layout
   return (
     <section className="relative">
-      <div className="py-16 md:py-24 bg-[#0E0F12]/95 border-t border-white/10">
+      <div className="py-16 md:py-24 bg-brand-surface2/60 border-t border-black/10">
         <Container>
           {/* header */}
           <div className="text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/80 tracking-wide">
+            <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 backdrop-blur px-3 py-1 text-xs font-semibold text-brand-ink/70 tracking-wide">
               Últimos projetos
             </div>
-            <h2 className="mt-4 font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight text-white">
+
+            <h2 className="mt-4 font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight text-brand-ink">
               Entregamos resultados reais para{" "}
-              <span className="gold-text">os nossos clientes</span>
+              <span className="gold-text drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
+                os nossos clientes
+              </span>
             </h2>
           </div>
 
@@ -68,14 +70,18 @@ export default function LatestProjects() {
               <article
                 key={p.title}
                 className={[
-                  "group rounded-3xl overflow-hidden border border-white/10 bg-[#0C0D10]/90",
-                  i == 1 ? "md:row-span-2" : "", // destaca o cartão do meio
+                  "group rounded-3xl overflow-hidden",
+                  "border border-black/10 bg-white/85 backdrop-blur shadow-lg ring-1 ring-black/5",
+                  "hover:shadow-xl transition-shadow",
+                  i === 1 ? "md:row-span-2" : "",
                 ].join(" ")}
               >
                 <div
                   className={[
                     "relative",
-                    i == 1 ? "aspect-[16/11] md:aspect-[3/4]" : "aspect-[16/11]",
+                    i === 1
+                      ? "aspect-[16/11] md:aspect-[3/4]"
+                      : "aspect-[16/11]",
                   ].join(" ")}
                 >
                   <Image
@@ -86,21 +92,25 @@ export default function LatestProjects() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     priority={i < 3}
                   />
+
+                  {/* véu sutil na imagem */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-transparent opacity-70" />
                 </div>
 
                 <div className="px-5 pb-5 pt-4">
                   <div className="text-xs uppercase tracking-wide gold-text">
                     {p.cat}
                   </div>
-                  <h3 className="mt-1 text-white font-semibold">
+
+                  <h3 className="mt-1 text-brand-ink font-semibold">
                     {p.title}
                   </h3>
 
                   <Link
                     href={p.href}
-                    className="mt-2 inline-flex items-center gap-2 text-[13px] font-semibold gold-text hover:text-teal-200"
+                    className="mt-2 inline-flex items-center gap-2 text-[13px] font-semibold gold-text"
                   >
-                    Read more <ArrowUpRight className="h-4 w-4" />
+                    Saber mais <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </div>
               </article>
@@ -108,14 +118,14 @@ export default function LatestProjects() {
           </div>
 
           {/* CTA */}
-          <div className="mt-10 text-center">
+          {/* <div className="mt-10 text-center">
             <Link
               href="/projectos"
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/10 hover:border-white/20 px-5 py-2.5 text-sm font-semibold text-white/90 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-white/60 hover:bg-white/85 px-5 py-2.5 text-sm font-semibold text-brand-ink/80 hover:text-brand-ink transition-colors"
             >
               Ver todos os projetos <ArrowUpRight className="h-4 w-4" />
             </Link>
-          </div>
+          </div> */}
         </Container>
       </div>
     </section>

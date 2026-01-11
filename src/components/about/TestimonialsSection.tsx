@@ -17,33 +17,32 @@ const TESTIMONIALS = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative bg-brand-coal py-16 md:py-24">
-      {/* véu leve para profundidade */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/10 to-black/40" />
-
+    <section className="py-16 md:py-24 bg-brand-surface2/60">
       <Container>
         {/* Cabeçalho */}
-        <div className="flex flex-col items-center text-center mb-12">
-          <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold tracking-[0.16em] uppercase text-brand-gold">
-            Top reviews
+        <div className="flex flex-col items-center text-center mb-14">
+          <span className="inline-flex items-center rounded-full border border-black/10 bg-white/70 backdrop-blur px-4 py-1 text-xs font-semibold tracking-[0.16em] uppercase text-brand-goldDark">
+            Testemunhos
           </span>
-          <h2 className="mt-4 font-heading text-3xl md:text-4xl font-bold text-white leading-tight">
-            Veja o feedback dos<br className="hidden sm:block" /> nossos clientes
+
+          <h2 className="mt-4 font-heading text-3xl md:text-4xl font-bold text-brand-ink leading-tight">
+            O que dizem os nossos
+            <br className="hidden sm:block" /> clientes e parceiros
           </h2>
         </div>
 
         {/* Reviews */}
         <div className="grid gap-10 md:grid-cols-2 md:gap-12 relative">
-          {/* linha vertical central no desktop, só estética */}
-          <div className="hidden md:block absolute left-1/2 top-6 bottom-6 w-px bg-white/10 -translate-x-1/2 pointer-events-none" />
+          {/* linha central apenas no desktop */}
+          <div className="hidden md:block absolute left-1/2 top-6 bottom-6 w-px bg-black/10 -translate-x-1/2 pointer-events-none" />
 
           {TESTIMONIALS.map((item) => (
             <article
               key={item.name}
               className="relative pl-6 md:pl-0 md:pr-6"
             >
-              {/* barra lateral esquerda, estilo do print */}
-              <div className="absolute left-0 top-0 bottom-0 w-px bg-white/10 md:left-0" />
+              {/* barra lateral */}
+              <div className="absolute left-0 top-0 bottom-0 w-px bg-black/10" />
 
               <div className="md:ml-6 space-y-4">
                 {/* aspas + estrelas */}
@@ -60,27 +59,27 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* texto */}
-                <p className="text-sm md:text-base text-white/70 leading-relaxed">
+                <p className="text-sm md:text-base text-brand-ink/75 leading-relaxed max-w-lg">
                   {item.text}
                 </p>
 
                 {/* nome */}
                 <div className="pt-2">
-                  <p className="text-sm font-semibold text-white">
+                  <p className="text-sm font-semibold text-brand-ink">
                     {item.name}
                   </p>
-                  <p className="text-xs text-white/60">{item.role}</p>
+                  <p className="text-xs text-brand-ink/60">{item.role}</p>
                 </div>
               </div>
             </article>
           ))}
         </div>
 
-        {/* indicador em barras (pager fake) */}
-        <div className="mt-10 flex justify-center gap-2">
-          <span className="h-0.5 w-10 rounded-full bg-white/20" />
+        {/* indicador visual (decorativo) */}
+        <div className="mt-12 flex justify-center gap-2">
+          <span className="h-0.5 w-10 rounded-full bg-black/15" />
           <span className="h-0.5 w-10 rounded-full bg-brand-gold" />
-          <span className="h-0.5 w-10 rounded-full bg-white/20" />
+          <span className="h-0.5 w-10 rounded-full bg-black/15" />
         </div>
       </Container>
     </section>
