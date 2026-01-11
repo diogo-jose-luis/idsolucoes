@@ -88,7 +88,7 @@ export default function Header() {
           </Link>
 
           {/* Carrinho */}
-          <Link
+          {/* <Link
             href="/"
             className={clsx(
               "inline-flex items-center justify-center rounded-2xl h-10 w-10 relative",
@@ -99,7 +99,7 @@ export default function Header() {
             title="Carrinho"
           >
             <ShoppingCart className="h-5 w-5 text-brand-ink/80" />
-          </Link>
+          </Link> */}
 
           {/* CTA (desktop) */}
           <Link

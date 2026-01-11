@@ -10,25 +10,31 @@ import { fadeUp, fadeUpDelayed } from "@/lib/motion";
 type PageBannerProps = {
   title: string;
   subtitle?: string;
-  image?: string; // fundo customizável por página
+  image?: string;
+  imagePosition?: string; // 👈 NOVO
 };
+
 
 export default function PageBanner({
   title,
   subtitle,
   image = "/hero/slide4.png",
+  imagePosition = "center", // 👈 default seguro
 }: PageBannerProps) {
+
   return (
     <section className="relative isolate">
       {/* BG */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src={image}
-          alt=""
-          fill
-          priority={false}
-          className="object-cover"
-        />
+       <Image
+  src={image}
+  alt=""
+  fill
+  priority={false}
+  className="object-cover"
+  style={{ objectPosition: imagePosition }}
+/>
+
 
         {/* Tema claro: véu branco -> transparente (oblíquo) + toque dourado suave */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/25 to-transparent" />
@@ -73,7 +79,8 @@ export default function PageBanner({
                   variants={fadeUpDelayed(0.15)}
                   initial="hidden"
                   animate="visible"
-                  className="mt-2 text-sm md:text-base text-brand-ink/75 max-w-2xl leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.18)]"
+                  className="mt-2 text-sm md:text-base text-black/80 max-w-2xl leading-relaxed drop-shadow-[0_1px_0_rgba(255,255,255,0.85)]"
+
                 >
                   {subtitle}
                 </motion.p>

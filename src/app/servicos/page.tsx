@@ -13,6 +13,7 @@ export default function ServicosPage() {
           title="Serviços IDS"
           subtitle="Formação certificada, segurança eletrónica e soluções técnicas para potenciar pessoas, empresas e operações."
           image="/hero/slide6.png"
+          imagePosition="10% 10%"
         />
 
           {/* Section com filtros por categoria */}

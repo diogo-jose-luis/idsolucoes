@@ -14,6 +14,7 @@ export default function ContactosPage() {
           title="Contactos"
           subtitle="Fale connosco para formações, serviços técnicos ou soluções à medida para o seu negócio."
           image="/hero/slide9.png"
+          imagePosition="10% 20%"
         />
 
         <ContactInfoStrip />

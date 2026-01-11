@@ -11,10 +11,10 @@ type Stat = {
 };
 
 const STATS: Stat[] = [
-  { value: 34, label: "Years Experience" },
-  { value: 99, label: "Customer Satisfaction" },
-  { value: 184, label: "Team Members" },
-  { value: 541, label: "Project Complete" },
+  { value: 4, label: "Anos De Experiência" },
+  { value: 20, label: "Satisfação Do Cliente" },
+  { value: 20, label: "Colaboradores" },
+  { value: 50, label: "Projetos Concluídos" },
 ];
 
 type HeroStatsProps = {

@@ -18,6 +18,7 @@ export default function CandidaturasPage() {
           title="Candidatura"
           subtitle="Formulário oficial de candidatura — preencha os dados para integrar a nossa base de recrutamento."
           image="/hero/slide10.png"
+          imagePosition="10% 10%"
         />
 
         <CandidateWizardForm />

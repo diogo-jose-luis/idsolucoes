@@ -16,7 +16,8 @@ export default function SobrePage() {
         <PageBanner
           title="Sobre Nós"
           subtitle="Conheça a IDS — uma equipa focada em formação, serviços técnicos e soluções de abastecimento para suportar o crescimento do seu negócio."
-          image="/hero/slide4.png"
+          image="/hero/slide11.png"
+          imagePosition="10% 10%"
         />
 
         <AboutIntroSection />

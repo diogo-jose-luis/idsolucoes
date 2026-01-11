@@ -13,6 +13,7 @@ export default function FormacoesPage() {
           title="Formações IDS"
           subtitle="Cursos e programas de capacitação para impulsionar a tua carreira e fortalecer as equipas da tua empresa."
           image="/hero/slide8.png"
+          imagePosition="10% 40%"
         />
 
         <FormacoesFilterSection />

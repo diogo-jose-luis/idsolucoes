@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function TeamSection() {
   const team = [
-    { name: "William Smith", role: "Brand designer", image: "/team/user1.jpeg" },
-    { name: "David Bell", role: "Marketer", image: "/team/user2.jpeg" },
-    { name: "Kevin Woods", role: "Product designer", image: "/team/user3.jpg" },
-    { name: "Georgia James", role: "Developer", image: "/team/user4.jpg" },
+    { name: "Igor Ribas", role: "CEO & Founder", image: "/team/igor.jpg" },
+    { name: "Danila Pedro", role: "Marketer", image: "/team/user2.jpeg" },
+    { name: "Celena Martins", role: "Product designer", image: "/team/user3.jpg" },
+    { name: "Carlos Mateus", role: "Developer", image: "/team/user4.jpg" },
   ];
 
   return (
