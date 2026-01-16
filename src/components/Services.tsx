@@ -9,19 +9,19 @@ const SERVICES = [
   {
     title: "Formação & Capital Humano",
     desc: "Planos de formação técnica e comportamental, upskilling e certificações para equipas de alta performance.",
-    href: "/servicos/formacao",
+    href: "/formacoes",
     img: "/hero/slide4.png",
   },
   {
     title: "Serviços Técnicos & Industriais",
     desc: "Manutenção, inspeção, automação e suporte operacional com foco em qualidade, segurança e resultados.",
-    href: "/servicos/industriais",
+    href: "/servicos",
     img: "/hero/slide2.png",
   },
   {
     title: "Man Power",
     desc: "Disponibilização de profissionais qualificados para operações e projetos, com rapidez, conformidade e foco em resultados.",
-    href: "/servicos/manpower",
+    href: "/man-power",
     img: "/hero/slide1.png",
   },
 ];

@@ -32,9 +32,9 @@ export default function ContactInfoStrip() {
           <InfoCard
             icon={<Mail className="h-6 w-6 text-brand-gold" />}
             title="Envie um Email"
-            lines={["sales@idsolicoes.ao"]}
+            lines={["sales@idsolucoes.ao"]}
             links={[
-              { label: "sales@idsolicoes.ao", href: "mailto:sales@idsolicoes.ao" },
+              { label: "sales@idsolucoes.ao", href: "mailto:sales@idsolucoes.ao" },
             ]}
           />
         </div>
