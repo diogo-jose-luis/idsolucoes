@@ -23,11 +23,13 @@ export default function ContactInfoStrip() {
             lines={["+244 929 826 391", "929 826 387", "929 826 357"]}
 
             links={[
-              { label: "+244 929 826 391", href: "tel:+244929826391" },
-              { label: "929 826 387", href: "tel:+244929826387" },
-              { label: "929 826 357", href: "tel:+244929826357" },
+              { label: "+244 929 826 391", href: `https://wa.me/+244929826391?text=olá team IDS` },
+              { label: "929 826 387", href: `https://wa.me/+244929826387?text=olá team IDS`},
+              { label: "929 826 357", href:  `https://wa.me/+244929826357?text=olá team IDS`},
             ]}
           />
+
+           
 
           <InfoCard
             icon={<Mail className="h-6 w-6 text-brand-gold" />}

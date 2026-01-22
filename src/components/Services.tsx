@@ -22,7 +22,7 @@ const SERVICES = [
     title: "Man Power",
     desc: "Disponibilização de profissionais qualificados para operações e projetos, com rapidez, conformidade e foco em resultados.",
     href: "/man-power",
-    img: "/hero/slide1.png",
+    img: "/hero/slide7.png",
   },
 ];
 
