@@ -22,7 +22,7 @@ export default function SobrePage() {
 
         <AboutIntroSection />
         <MissionVisionValuesSection /> {/* ← nova section */}
-        <TeamSection />
+        {/* <TeamSection /> */}
         <HeroStats overlap={false} className="mt-5 mb-5" />
         <TestimonialsSection />
       </main>
