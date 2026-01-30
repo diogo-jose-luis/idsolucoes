@@ -14,29 +14,38 @@ export default function ContactInfoStrip() {
           <InfoCard
             icon={<MapPin className="h-6 w-6 text-brand-gold" />}
             title="Nossa Localização"
-            lines={["Miramar, ilha de Luanda", "Angola"]}
+            lines={["Avenida Mortala Mohamed - Ilha de Luanda", "Angola"]}
           />
 
           <InfoCard
             icon={<Phone className="h-6 w-6 text-brand-gold" />}
             title="Telefone"
             lines={["+244 929 826 391", "929 826 387", "929 826 357"]}
-
             links={[
-              { label: "+244 929 826 391", href: `https://wa.me/+244929826391?text=olá team IDS` },
-              { label: "929 826 387", href: `https://wa.me/+244929826387?text=olá team IDS`},
-              { label: "929 826 357", href:  `https://wa.me/+244929826357?text=olá team IDS`},
+              {
+                label: "+244 929 826 391",
+                href: `https://wa.me/+244929826391?text=olá team IDS`,
+              },
+              {
+                label: "929 826 387",
+                href: `https://wa.me/+244929826387?text=olá team IDS`,
+              },
+              {
+                label: "929 826 357",
+                href: `https://wa.me/+244929826357?text=olá team IDS`,
+              },
             ]}
           />
-
-           
 
           <InfoCard
             icon={<Mail className="h-6 w-6 text-brand-gold" />}
             title="Envie um Email"
             lines={["sales@idsolucoes.ao"]}
             links={[
-              { label: "sales@idsolucoes.ao", href: "mailto:sales@idsolucoes.ao" },
+              {
+                label: "sales@idsolucoes.ao",
+                href: "mailto:sales@idsolucoes.ao",
+              },
             ]}
           />
         </div>
@@ -67,19 +76,21 @@ function InfoCard({
       </h3>
 
       <div className="mt-2 space-y-1 text-sm text-brand-ink/75">
-        {(links?.length ? links : lines.map((l) => ({ label: l, href: "" }))).map(
-          (item) =>
-            item.href ? (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="block hover:text-brand-ink transition-colors"
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <p key={item.label}>{item.label}</p>
-            )
+        {(links?.length
+          ? links
+          : lines.map((l) => ({ label: l, href: "" }))
+        ).map((item) =>
+          item.href ? (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="block hover:text-brand-ink transition-colors"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <p key={item.label}>{item.label}</p>
+          ),
         )}
       </div>
 
