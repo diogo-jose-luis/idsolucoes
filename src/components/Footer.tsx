@@ -212,7 +212,7 @@ export default function Footer() {
 
       {/* BOTÃO FLUTUANTE WHATSAPP */}
       <a
-        href="https://wa.me/+244929826391"
+        href="https://wa.me/244929826391"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp"
