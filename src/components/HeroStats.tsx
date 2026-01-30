@@ -11,7 +11,7 @@ type Stat = {
 };
 
 const STATS: Stat[] = [
-  { value: 4, label: "Anos De Experiência" },
+  { value: 5, label: "Anos De Experiência" },
   { value: 20, label: "Satisfação Do Cliente" },
   { value: 20, label: "Colaboradores" },
   { value: 50, label: "Projetos Concluídos" },

@@ -9,6 +9,7 @@ import {
   Linkedin,
   Youtube,
   ArrowDownToLine,
+  MessageCircle,
 } from "lucide-react";
 
 const footerLinks = {
@@ -150,7 +151,9 @@ export default function Footer() {
             </p>
             <nav className="flex items-center gap-5 text-xs">
               <FooterLink href="/termos">Termos de Uso</FooterLink>
-              <FooterLink href="/privacidade">Política de Privacidade</FooterLink>
+              <FooterLink href="/privacidade">
+                Política de Privacidade
+              </FooterLink>
               <FooterLink href="/cookies">Política de Cookies</FooterLink>
             </nav>
           </div>
@@ -206,6 +209,26 @@ export default function Footer() {
           }
         `}</style>
       </div>
+
+      {/* BOTÃO FLUTUANTE WHATSAPP */}
+      <a
+        href="https://wa.me/+244929826391"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp"
+        className="
+    fixed bottom-6 right-6 z-[90]
+    flex items-center justify-center
+    w-14 h-14
+    rounded-full
+    bg-[#25D366]
+    shadow-lg
+    hover:scale-105 hover:shadow-xl
+    transition-all duration-300
+  "
+      >
+        <MessageCircle className="w-7 h-7 text-white" />
+      </a>
     </footer>
   );
 }
@@ -218,7 +241,10 @@ function FooterLink({
   children: React.ReactNode;
 }) {
   return (
-    <Link href={href} className="text-white/75 hover:text-white transition-colors">
+    <Link
+      href={href}
+      className="text-white/75 hover:text-white transition-colors"
+    >
       {children}
     </Link>
   );
