@@ -46,7 +46,7 @@ export default function Header() {
       className={clsx(
         "sticky top-0 z-[60]",
         "backdrop-blur supports-[backdrop-filter]:bg-white/70",
-        "border-b border-black/10"
+        "border-b border-black/10",
       )}
     >
       <Container className="flex h-20 items-center justify-between">
@@ -61,7 +61,7 @@ export default function Header() {
               href={item.href}
               className={clsx(
                 "text-sm font-medium text-brand-ink/80 hover:text-brand-ink transition-colors",
-                pathname === item.href && "gold-text"
+                pathname === item.href && "gold-text",
               )}
             >
               {item.label}
@@ -78,7 +78,7 @@ export default function Header() {
               "hidden md:inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium",
               "text-brand-ink/80 hover:text-brand-ink",
               "border border-black/10 hover:border-black/20",
-              "bg-white/40 hover:bg-white/70 transition-colors"
+              "bg-white/40 hover:bg-white/70 transition-colors",
             )}
             aria-label="Candidatura Espontânea"
             title="Candidatura Espontânea"
@@ -102,19 +102,22 @@ export default function Header() {
           </Link> */}
 
           {/* CTA (desktop) */}
-          <Link
-            href="/contactos"
-            className="hidden md:inline-flex rounded-md btn-gold text-black px-4 py-2 text-sm font-semibold gold-ring"
+          <a
+            href="https://wa.me/244929826391?text=Olá,%20gostaria%20de%20obter%20mais%20informações."
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="rounded-2xl btn-gold text-black px-3 py-2 text-sm font-semibold gold-ring text-center"
           >
-            Fale Conosco
-          </Link>
+            FALE NO WHATSAPP
+          </a>
 
           {/* HAMBURGUER (mobile) */}
           <button
             className={clsx(
               "md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md",
               "border border-black/10 hover:border-black/20",
-              "bg-white/40 hover:bg-white/70 transition-colors"
+              "bg-white/40 hover:bg-white/70 transition-colors",
             )}
             aria-label="Abrir menu"
             aria-expanded={open}
@@ -132,7 +135,9 @@ export default function Header() {
           "fixed inset-0 z-[55] md:hidden",
           "bg-black/25 backdrop-blur-[1px]",
           "transition-opacity duration-300",
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none",
         )}
         onClick={() => setOpen(false)}
       />
@@ -144,7 +149,7 @@ export default function Header() {
           "fixed top-0 right-0 z-[60] h-full w-[84%] max-w-xs md:hidden",
           "bg-brand-surface border-l border-black/10 shadow-2xl ring-1 ring-black/5",
           "transition-transform duration-300",
-          open ? "translate-x-0" : "translate-x-full"
+          open ? "translate-x-0" : "translate-x-full",
         )}
       >
         <div
@@ -156,7 +161,7 @@ export default function Header() {
             className={clsx(
               "inline-flex h-10 w-10 items-center justify-center rounded-2xl",
               "border border-black/10 hover:border-black/20",
-              "bg-white/40 hover:bg-white/70 transition-colors"
+              "bg-white/40 hover:bg-white/70 transition-colors",
             )}
             aria-label="Fechar menu"
             onClick={() => setOpen(false)}
@@ -174,7 +179,7 @@ export default function Header() {
               className={clsx(
                 "rounded-xl px-3 py-3 text-base font-medium transition-colors",
                 "text-brand-ink/80 hover:text-brand-ink hover:bg-black/5",
-                pathname === item.href && "gold-text"
+                pathname === item.href && "gold-text",
               )}
             >
               {item.label}
@@ -189,20 +194,22 @@ export default function Header() {
                 "inline-flex items-center justify-center gap-2 rounded-2xl px-3 py-3 text-sm font-medium",
                 "border border-black/10 hover:border-black/20",
                 "bg-white/40 hover:bg-white/70 transition-colors",
-                "text-brand-ink/80 hover:text-brand-ink"
+                "text-brand-ink/80 hover:text-brand-ink",
               )}
             >
               <FileUser className="h-5 w-5" />
               CANDIDATURA
             </Link>
 
-            <Link
-              href="/contactos"
+            <a
+              href="https://wa.me/244929826391?text=Olá,%20gostaria%20de%20obter%20mais%20informações."
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="rounded-2xl btn-gold text-black px-3 py-3 text-sm font-semibold gold-ring text-center"
             >
-              FALE CONOSCO
-            </Link>
+              FALE NO WHATSAPP
+            </a>
           </div>
         </nav>
       </div>

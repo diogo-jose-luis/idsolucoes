@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 };
 
 import { Rajdhani, Exo_2 } from "next/font/google";
+import JivoChat from "@/components/chat/JivoChat";
 
 export const rajdhani = Rajdhani({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt" className={`${rajdhani.variable} ${exo2.variable}`}>
       <body>{children}</body>
+      <JivoChat widgetId="OC1VrOK3gM" />
     </html>
   );
 }
