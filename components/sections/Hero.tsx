@@ -2,7 +2,9 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="is-dark relative overflow-hidden bg-black py-24 text-white md:py-28">
+    <section 
+    id="inicio"
+    className="is-dark relative overflow-hidden bg-black py-24 text-white md:py-28">
       
       {/* brilho dourado subtil no canto */}
       <div className="pointer-events-none absolute -right-56 -top-40 h-[760px] w-[760px] rounded-full bg-[radial-gradient(circle,rgba(201,154,58,0.10)_0%,transparent_62%)]" />
@@ -45,11 +47,11 @@ export default function Hero() {
             className="fade-up flex flex-wrap gap-4"
             style={{ animationDelay: "0.7s" }}
           >
-            <Link href="/contactos" className="btn btn-fill">
+            <Link href="#contactos" className="btn btn-fill">
               Pedir levantamento técnico
             </Link>
 
-            <Link href="/servicos" className="btn btn-ghost">
+            <Link href="#servicos" className="btn btn-ghost">
               Ver serviços
             </Link>
           </div>

@@ -37,7 +37,7 @@ export default function CTA() {
             <div className="mt-10 flex flex-wrap gap-4">
 
               <Link
-                href="/contactos"
+                href="#contactos"
                 className="btn btn-fill group relative"
               >
                 Pedir Proposta

@@ -27,7 +27,9 @@ export default function Services() {
   ];
 
   return (
-    <section className="relative bg-black py-24 md:py-28 text-white overflow-hidden">
+    <section 
+    id="servicos"
+    className="relative bg-black py-24 md:py-28 text-white overflow-hidden">
 
       {/* brilho dourado subtil (igual ao Hero) */}
       <div className="pointer-events-none absolute -right-56 -top-40 h-[760px] w-[760px] rounded-full bg-[radial-gradient(circle,rgba(201,154,58,0.10)_0%,transparent_62%)]" />

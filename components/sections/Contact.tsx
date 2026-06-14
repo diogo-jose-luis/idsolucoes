@@ -24,7 +24,9 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-paper py-28">
+    <section 
+    id="contactos"
+    className="bg-paper py-28">
       <div className="mx-auto max-w-[1240px] px-8">
 
         {/* HEADER */}
@@ -97,7 +99,7 @@ export default function Contact() {
 
       <textarea
         placeholder="Mensagem"
-        rows={5}
+        rows={12}
         className="w-full border border-line p-3 text-sm outline-none"
       />
 
