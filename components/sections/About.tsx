@@ -1,6 +1,8 @@
 export default function About() {
   return (
-    <section className="bg-paper py-24 md:py-28">
+    <section 
+    id="sobre"
+    className="bg-paper py-24 md:py-28">
       <div className="mx-auto grid max-w-[1240px] items-start gap-16 px-8 md:grid-cols-2">
 
         {/* Lado esquerdo */}

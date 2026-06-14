@@ -6,10 +6,10 @@ import { useState } from "react";
 import Logo from "@/components/Logo";
 
 const nav = [
-  { label: "Início", href: "/" },
-  { label: "Sobre", href: "/sobre" },
-  { label: "Serviços", href: "/servicos" },
-  { label: "Contactos", href: "/contactos" },
+  { label: "Início", href: "#inicio" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Contactos", href: "#contactos" },
 ];
 
 export default function Header() {
