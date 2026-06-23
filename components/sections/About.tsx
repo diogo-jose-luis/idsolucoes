@@ -1,29 +1,52 @@
 export default function About() {
   return (
     <section 
-    id="sobre"
-    className="bg-paper py-24 md:py-28">
+      id="sobre"
+      className="bg-paper py-24 md:py-15"
+    >
       <div className="mx-auto grid max-w-[1240px] items-start gap-16 px-8 md:grid-cols-2">
 
         {/* Lado esquerdo */}
         <div>
           <span className="eyebrow mb-6 text-ink">
-            Quem Somos
+            Sobre nós
           </span>
-
-          <h2 className="mb-6 font-display text-[clamp(34px,4vw,54px)] font-medium leading-[1.1] text-ink">
-            Uma empresa focada em
-            <span className="gold-text block">
-              soluções inteligentes
-            </span>
-            para negócios modernos.
-          </h2>
-
-          <p className="text-[16.5px] leading-relaxed text-muted max-w-[520px]">
-            A IDS — Império Dourado Soluções é uma empresa angolana especializada em
-            serviços tecnológicos e empresariais. Atuamos com foco em eficiência,
-            inovação e resultados práticos, ajudando organizações a crescer com estrutura.
+         
+          <p className="text-[16.5px] leading-relaxed text-muted max-w-[520px] mb-6">
+            A IDS — Império Dourado Soluções é uma empresa angolana de prestação de serviços estratégicos,
+            com actuação nas áreas de segurança electrónica, cedência de mão de obra (manpower),
+            formação profissional, manutenção técnica e suporte especializado.
           </p>
+
+          <p className="text-[16.5px] leading-relaxed text-muted max-w-[520px] mb-6">
+            A nossa missão é capacitar pessoas e transformar o mercado angolano através de soluções práticas,
+            humanas e sustentáveis.
+          </p>
+          
+          {/* PORQUÊ A IDS */}
+<div className="mt-8">
+  <h3 className="font-display text-[18px] font-medium text-ink mb-4">
+    Porquê a IDS
+  </h3>
+
+  <ul className="space-y-3 text-[15px] text-muted leading-relaxed">
+    <li>
+      • Equipa jovem e altamente qualificada — profissionais especializados e em formação contínua.
+    </li>
+    <li>
+      • Parcerias sólidas — colaboração com instituições nacionais e internacionais e com fabricantes de referência.
+    </li>
+    <li>
+      • Conhecimento do contexto local — domínio profundo do talento e da realidade do mercado angolano.
+    </li>
+    <li>
+      • Flexibilidade — capacidade de actuar em diversos sectores e de adaptar a solução a cada cliente.
+    </li>
+    <li>
+      • Visão de longo prazo — foco em sustentabilidade e em relações de parceria duradouras.
+    </li>
+  </ul>
+</div>
         </div>
 
         {/* Lado direito - cards */}
@@ -38,8 +61,7 @@ export default function About() {
             </h3>
 
             <p className="text-[15px] text-muted leading-relaxed">
-              Fornecer soluções tecnológicas e empresariais que aumentem a eficiência
-              e o crescimento sustentável das organizações.
+              Capacitar talentos locais e transformar o mercado angolano com soluções inovadoras, humanas e sustentáveis.
             </p>
           </div>
 
@@ -52,7 +74,7 @@ export default function About() {
             </h3>
 
             <p className="text-[15px] text-muted leading-relaxed">
-              Ser referência em Angola na transformação digital e consultoria empresarial.
+              Ser uma referência nacional em serviços estratégicos, contribuindo activamente para o desenvolvimento de Angola.
             </p>
           </div>
 
@@ -64,9 +86,29 @@ export default function About() {
               Valores
             </h3>
 
-            <p className="text-[15px] text-muted leading-relaxed">
-              Excelência, inovação, ética profissional e compromisso com resultados.
-            </p>
+            <div className="flex flex-wrap gap-2 text-muted text-[14px]">
+              {[
+                "Confiança",
+                "Excelência",
+                "Inovação",
+                "Desenvolvimento humano",
+                "Sustentabilidade",
+                "Parceria",
+                "Adaptabilidade",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="
+                    border border-line
+                    px-3 py-1 text-[13px]
+                    transition-all duration-300
+                    hover:border-gold hover:text-gold
+                  "
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
 
         </div>

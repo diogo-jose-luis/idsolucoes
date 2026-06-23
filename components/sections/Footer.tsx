@@ -46,8 +46,8 @@ export default function Footer() {
             <h5 className="mb-5 text-[12px] font-semibold uppercase tracking-[0.16em] text-white">
               Contacto
             </h5>
-            <a href="tel:+244929826391" className="mb-3 block w-fit text-[14.5px] transition-all hover:pl-1 hover:text-goldsoft">
-              +244 929 826 391
+            <a href="tel:+244929481473" className="mb-3 block w-fit text-[14.5px] transition-all hover:pl-1 hover:text-goldsoft">
+              +244 929 481 473
             </a>
             <a href="tel:+244929826387" className="mb-3 block w-fit text-[14.5px] transition-all hover:pl-1 hover:text-goldsoft">
               +244 929 826 387
