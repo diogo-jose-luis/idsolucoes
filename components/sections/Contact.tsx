@@ -56,7 +56,7 @@ export default function Contact() {
         <h3 className="font-display text-[18px] mb-2 text-ink">
           Telefone
         </h3>
-        <p className="text-muted">+244 929 826 391</p>
+        <p className="text-muted">+244 929 481 473</p>
         <p className="text-muted">+244 929 826 387</p>
       </div>
 
