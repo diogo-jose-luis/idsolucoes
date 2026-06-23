@@ -3,6 +3,7 @@ import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -35,7 +36,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        </body>
+        <ScrollToTopButton />
+      </body>
     </html>
   );
 }
