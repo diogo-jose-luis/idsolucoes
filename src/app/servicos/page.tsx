@@ -11,7 +11,7 @@ export default function ServicosPage() {
       <main>
         <PageBanner
           title="Serviços IDS"
-          subtitle="Formação certificada, segurança eletrónica e soluções técnicas para potenciar pessoas, empresas e operações."
+          subtitle="Formação certificada, segurança eletrónica e soluções técnicas para potencializar pessoas, empresas e operações."
           image="/hero/slide6.png"
           imagePosition="10% 10%"
         />

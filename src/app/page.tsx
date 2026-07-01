@@ -16,7 +16,7 @@ export default function HomePage() {
         <HeroBanner />
         <HeroStats overlap={true} />
         <AboutFeatures />
-        <MarqueeBar /> {/* fica lindo entre Services e o próximo bloco */}
+        <MarqueeBar /> {/* fica maravilhoso entre Services e o próximo bloco */}
         <Services /> {/* ← novo bloco */}
         <LatestProjects /> {/* ← novo bloco */}
         <Footer /> {/* ← novo bloco */}
