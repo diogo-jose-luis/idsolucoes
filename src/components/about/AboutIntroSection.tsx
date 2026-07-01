@@ -62,7 +62,7 @@ export default function AboutIntroSection() {
 
             <p className="text-sm md:text-base text-brand-ink/75 max-w-xl leading-relaxed">
               A IDS combina formação especializada, serviços técnicos e{" "}
-              <span className="font-semibold text-brand-ink/85">man power</span>{" "}
+              <span className="font-semibold text-brand-ink/85">Man Power</span>{" "}
               para apoiar empresas em todo o ciclo operacional — da capacitação
               da equipa à execução em campo.
             </p>
