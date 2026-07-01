@@ -12,7 +12,7 @@ export default function ContactosPage() {
       <main>
         <PageBanner
           title="Contactos"
-          subtitle="Fale connosco para formações, serviços técnicos ou soluções à medida para o seu negócio."
+          subtitle="Fale connosco para formações, serviços técnicos ou soluções à medida do seu negócio."
           image="/hero/slide9.png"
           imagePosition="10% 20%"
         />

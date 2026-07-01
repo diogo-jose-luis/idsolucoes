@@ -20,14 +20,14 @@ export default function ContactInfoStrip() {
           <InfoCard
             icon={<Phone className="h-6 w-6 text-brand-gold" />}
             title="Telefone"
-            lines={["+244 929 826 391", "929 826 387", "929 826 357"]}
+            lines={["+244 929 481 473", "956 711 500", "929 826 357"]}
             links={[
               {
-                label: "+244 929 826 391",
+                label: "+244 929 481 473",
                 href: `https://wa.me/+244929826391?text=olá team IDS`,
               },
               {
-                label: "929 826 387",
+                label: "956 711 500",
                 href: `https://wa.me/+244929826387?text=olá team IDS`,
               },
               {
